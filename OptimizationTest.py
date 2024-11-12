@@ -28,8 +28,8 @@ def df_dx(x, beta, gamma):
 # Root-Finding Function
 # _______________________________
 
-# I found a great source that showed me how to do this using the numba and scipi library
-# so I decided to just repurpose it
+# I found a great source that showed me how to do this using the numba and scipi library so I decided to just repurpose it
+
 def find_steady_states(beta, gamma, x_min=0.01, x_max=100.0, num_points=1000):
     
     # Newtons method Root Finder
@@ -54,9 +54,9 @@ def find_steady_states(beta, gamma, x_min=0.01, x_max=100.0, num_points=1000):
             continue
     return np.array(roots)
 
-# _______________________________
+# ______________________________________________
 # Analyze Parameter Space with Parallelization
-# _______________________________
+# _____________________________________________
 
 
 def analyze_single_parameter(beta, gamma):
@@ -70,7 +70,7 @@ def analyze_single_parameter(beta, gamma):
             stable += 1
     return (beta, gamma, num_roots, stable)
 
-# I wanted to try out parallel computing and this is my attempt, JobLib basically does most of the work for you once you
+# I wanted to try out parallel computing and this is my attempt, JobLib basically does most of the work for you once you figure out how to enter paramtetsr
 def analyze_parameter_space_parallel(beta_samples, gamma_samples, n_jobs=-1):
     # Parallelizing the analysis of parameter space using Joblib
 
